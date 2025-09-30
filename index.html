@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Rechenaufgaben">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Rechenaufgaben - 1. Klasse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Rechenaufgaben</h1>
+            <p class="subtitle">1. Klasse</p>
+        </header>
+
+        <div class="settings-card">
+            <h2>⚙️ Einstellungen</h2>
+
+            <div class="setting-group">
+                <label>Zahlenraum:</label>
+                <div class="radio-group">
+                    <button class="radio-btn active" data-value="10" data-group="zahlenraum">bis 10</button>
+                    <button class="radio-btn" data-value="20" data-group="zahlenraum">bis 20</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Rechenart:</label>
+                <div class="radio-group">
+                    <button class="radio-btn" data-value="plus" data-group="rechenart">Plus</button>
+                    <button class="radio-btn" data-value="minus" data-group="rechenart">Minus</button>
+                    <button class="radio-btn active" data-value="gemischt" data-group="rechenart">Gemischt</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="new-task-btn" id="neueAufgabe">
+            🎲 Neue Aufgabe erstellen
+        </button>
+
+        <div class="task-card" id="taskCard">
+            <div class="task-display" id="taskDisplay">
+                Drücke den Button, um eine Aufgabe zu erstellen!
+            </div>
+
+            <div class="answer-section" id="answerSection" style="display: none;">
+                <label for="answer">Deine Antwort:</label>
+                <input type="number" id="answer" inputmode="numeric" pattern="[0-9]*">
+                <button class="check-btn" id="checkBtn">✓ Prüfen</button>
+            </div>
+
+            <div class="result" id="result"></div>
+        </div>
+
+        <div class="stats" id="stats">
+            Richtig: 0 | Gesamt: 0 | Erfolgsquote: 0%
+        </div>
+
+        <div class="install-prompt" id="installPrompt" style="display: none;">
+            <p>📱 Tipp: Füge diese App zum Home-Bildschirm hinzu!</p>
+            <small>Safari → Teilen → Zum Home-Bildschirm</small>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
